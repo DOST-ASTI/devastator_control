@@ -1,6 +1,14 @@
 //  Devastator bot control module
 //  October 23, 2018
 //  DOST-ASTI, RDD Team
+//***************************************************
+//-----------Robot Control Flags---------------------
+// 1 - Move Forward
+// 2 - Turn Right
+// 3 - Turn Left
+// 4 - Turn around (Rotate Right)
+// 5 - Move Backward
+// 6 - Stop
 /////////////////////////////////////////////////////////////
 
 #include <ros/ros.h>
@@ -193,6 +201,7 @@ int main(int argc, char** argv)
   Devastator devastator;
   ros::Rate r(10);
   while (ros::ok()){
+    //Calls all ROS callback functions.
     ros::spinOnce();
 
     //If no override is detected. Navigate autonomously.
